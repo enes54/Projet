@@ -1,0 +1,33 @@
+<h1>PAGE DU CLUB</h1>
+
+<% if logged_in? %>
+
+<table style="width:100%">
+	<tr>
+      <th>Last_name</th>
+      <th>First_name</th>
+      <th>Email</th>
+	</tr>
+<% @users.each do |user| %>
+ 
+	<tr>
+
+		<td><%= user.last_name %></td>
+		<td><%= user.first_name %></td>
+		<td><%= user.email %></td>
+	</tr>
+
+<% end %>
+
+	<% else %>
+  You need to be logged in to access this content. <br><br>
+  <%= link_to "Sign up", signup_path, class: "btn btn btn-primary" %>     <%= link_to "Log in", login_path, class: "btn btn-primary" %>
+
+  <% end %>
+
+
+
+
+
+
+
